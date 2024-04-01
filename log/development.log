@@ -1,65 +1,30 @@
-Started GET "/" for ::1 at 2024-04-01 11:37:42 +0900
-  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
-  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by Rails::WelcomeController#index as HTML
-  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.3ms | Allocations: 375)
-Completed 200 OK in 425ms (Views: 91.1ms | ActiveRecord: 0.0ms | Allocations: 8814)
-
-
-Started GET "/graphql" for ::1 at 2024-04-01 11:37:57 +0900
-  
-ActionController::RoutingError (No route matches [GET] "/graphql"):
-  
-Started GET "/graphql" for ::1 at 2024-04-01 11:38:56 +0900
-  
-ArgumentError (Invalid route name, already in use: 'graphiql_rails' 
-You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
-https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
-  
-config/routes.rb:5:in `block in <main>'
-config/routes.rb:1:in `<main>'
-Started GET "/graphql" for ::1 at 2024-04-01 11:44:12 +0900
-  
-ActionController::RoutingError (No route matches [GET] "/graphql"):
-  
-Started GET "/graphiql" for ::1 at 2024-04-01 11:44:35 +0900
+Started GET "/graphiql" for ::1 at 2024-04-01 13:38:32 +0900
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by GraphiQL::Rails::EditorsController#show as HTML
   Parameters: {"graphql_path"=>"/graphql"}
   Rendering C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb
-  Rendered C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 4757.1ms | Allocations: 268989)
-Completed 500 Internal Server Error in 4872ms (ActiveRecord: 0.0ms | Allocations: 270013)
+  Rendered C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 3059.9ms | Allocations: 274202)
+Completed 500 Internal Server Error in 3316ms (ActiveRecord: 0.0ms | Allocations: 282863)
 
 
   
-ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/hoang/source/repos/ruby_on_rails/rails_graphql/tmp/cache/assets/sprockets/v4.0.0/Df/Dflp3djw31xNcznqypxYwlT7pTne3bU9s9kDGtlute8.cache.30360.14836.563232, C:/Users/hoang/source/repos/ruby_on_rails/rails_graphql/tmp/cache/assets/sprockets/v4.0.0/Df/Dflp3djw31xNcznqypxYwlT7pTne3bU9s9kDGtlute8.cache)):
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/sources/repo/ror/rails_graphql/tmp/cache/assets/sprockets/v4.0.0/ET/ETz8yV_NSqah3ZPe8hW1s0mJYhAhAScaX17C2qOKKUM.cache.22680.7664.879765, C:/sources/repo/ror/rails_graphql/tmp/cache/assets/sprockets/v4.0.0/ET/ETz8yV_NSqah3ZPe8hW1s0mJYhAhAScaX17C2qOKKUM.cache)):
   
 sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
 sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
 sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
 sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
 sprockets (4.2.1) lib/sprockets/cache.rb:143:in `set'
-sprockets (4.2.1) lib/sprockets/loader.rb:268:in `store_asset'
-sprockets (4.2.1) lib/sprockets/loader.rb:228:in `load_from_unloaded'
-sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
-sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:343:in `fetch_asset_from_dependency_cache'
 sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
 sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
 sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
-sprockets (4.2.1) lib/sprockets/context.rb:117:in `load'
-sprockets (4.2.1) lib/sprockets/context.rb:145:in `depend_on_asset'
-sprockets (4.2.1) lib/sprockets/context.rb:185:in `link_asset'
-sprockets-rails (3.4.2) lib/sprockets/rails/context.rb:27:in `compute_asset_path'
-actionview (7.1.3.2) lib/action_view/helpers/asset_url_helper.rb:204:in `asset_path'
-sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:41:in `sourcemap_asset_path'
-sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:34:in `resolved_sourcemap_comment'
-sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:15:in `block in call'
-sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `gsub'
-sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `call'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
 sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
 sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
 sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
@@ -73,7 +38,10 @@ concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in f
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
 sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
-sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each_key'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.1) lib/sprockets/bundle.rb:31:in `call'
 sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
 sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
 sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
@@ -104,625 +72,106 @@ concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
 concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
-Started GET "/graphiql" for ::1 at 2024-04-01 12:07:14 +0900
+Started GET "/" for ::1 at 2024-04-01 13:38:36 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 269)
+Completed 200 OK in 33ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1778)
+
+
+Started GET "/graphiql" for ::1 at 2024-04-01 13:38:40 +0900
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 36.2ms | Allocations: 24890)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.0ms | Allocations: 25190)
+
+
+Started POST "/graphql" for ::1 at 2024-04-01 13:38:40 +0900
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                    ofType {\n                      kind\n                      name\n                      ofType {\n                        kind\n                        name\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "operationName"=>"IntrospectionQuery", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                    ofType {\n                      kind\n                      name\n                      ofType {\n                        kind\n                        name\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "operationName"=>"IntrospectionQuery"}}
+Interface `Node` hidden because it has no visible implementors
+Completed 200 OK in 150ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 17335)
+
+
+Started POST "/graphql" for ::1 at 2024-04-01 13:38:42 +0900
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query{\n  fetchNote(id:10)\n  {\n  id\n  title\n  body}\n}", "graphql"=>{"query"=>"query{\n  fetchNote(id:10)\n  {\n  id\n  title\n  body}\n}"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 686)
+
+
+Started POST "/graphql" for ::1 at 2024-04-01 13:38:56 +0900
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    testField\n}", "graphql"=>{"query"=>"query {\n    testField\n}"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 673)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (13.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-04-01 04:41:46.097697', '2024-04-01 04:41:46.097700') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotes (20240401044043)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_notes_on_title" ON "notes" ("title")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240401044043') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (2.5ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 1"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 04:53:07.063536"], ["updated_at", "2024-04-01 04:53:07.063536"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 2"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 04:53:07.072027"], ["updated_at", "2024-04-01 04:53:07.072027"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 3"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 04:53:07.074901"], ["updated_at", "2024-04-01 04:53:07.074901"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (1.3ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 4"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 04:53:07.077633"], ["updated_at", "2024-04-01 04:53:07.077633"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 5"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 04:53:07.080252"], ["updated_at", "2024-04-01 04:53:07.080252"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/graphiql" for ::1 at 2024-04-01 13:53:12 +0900
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by GraphiQL::Rails::EditorsController#show as HTML
   Parameters: {"graphql_path"=>"/graphql"}
   Rendering C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb
-  Rendered C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 963.4ms | Allocations: 32845)
-Completed 200 OK in 1123ms (Views: 992.5ms | ActiveRecord: 0.0ms | Allocations: 37657)
+  Rendered C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphiql-rails-1.10.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 5.7ms | Allocations: 2822)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 3824)
 
 
-Started POST "/graphql" for ::1 at 2024-04-01 12:07:45 +0900
+Started POST "/graphql" for ::1 at 2024-04-01 13:53:12 +0900
 Processing by GraphqlController#execute as */*
   Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                    ofType {\n                      kind\n                      name\n                      ofType {\n                        kind\n                        name\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "operationName"=>"IntrospectionQuery", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                    ofType {\n                      kind\n                      name\n                      ofType {\n                        kind\n                        name\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "operationName"=>"IntrospectionQuery"}}
 Interface `Node` hidden because it has no visible implementors
-Completed 200 OK in 224ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 17326)
+Completed 200 OK in 84ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 13427)
 
 
-Started GET "/graphql" for ::1 at 2024-04-01 12:07:58 +0900
-  
-ActionController::RoutingError (No route matches [GET] "/graphql"):
-  
-Started POST "/graphql" for ::1 at 2024-04-01 12:19:40 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n    testField\n}", "graphql"=>{"query"=>"query {\n    testField\n}"}}
-Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 672)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 12:20:07 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n    __type {\n      name\n      description\n      specifiedByURL\n    }\n}", "graphql"=>{"query"=>"query {\n    __type {\n      name\n      description\n      specifiedByURL\n    }\n}"}}
-Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 758)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 12:20:19 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\ntestField\n}", "graphql"=>{"query"=>"query {\ntestField\n}"}}
-Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 658)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 12:32:59 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\ntestField\n}", "graphql"=>{"query"=>"query {\ntestField\n}"}}
-Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 644)
-
-
-  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
-  [1m[36mActiveRecord::InternalMetadata Create (4.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-04-01 03:37:13.196917', '2024-04-01 03:37:13.196923') RETURNING "key"[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateNotes (20240401033405)
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "notes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
-  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_notes_on_title" ON "notes" ("title")[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240401033405') RETURNING "version"[0m
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 1"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 03:45:56.792670"], ["updated_at", "2024-04-01 03:45:56.792670"]]
-  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 2"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 03:45:56.799802"], ["updated_at", "2024-04-01 03:45:56.799802"]]
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 3"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 03:45:56.802038"], ["updated_at", "2024-04-01 03:45:56.802038"]]
-  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 4"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 03:45:56.804083"], ["updated_at", "2024-04-01 03:45:56.804083"]]
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO "notes" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Note 5"], ["body", "Lorem ipsum saves lives"], ["created_at", "2024-04-01 03:45:56.806366"], ["updated_at", "2024-04-01 03:45:56.806366"]]
-  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
-Started POST "/graphql" for ::1 at 2024-04-01 12:46:11 +0900
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/graphql" for ::1 at 2024-04-01 13:53:17 +0900
 Processing by GraphqlController#execute as */*
   Parameters: {"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}"}}
-Found two visible definitions for `Note.id`: #<Types::BaseField Note.id: ID!>, #<Types::BaseField Note.id: ID!>
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:36:in `block in visible_entry?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:31:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:31:in `visible_entry?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/member/has_fields.rb:142:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:598:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:161:in `block (2 levels) in get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:380:in `block in read_through'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:170:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:343:in `block in find_fields_and_fragments'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:340:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:340:in `find_fields_and_fragments'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:333:in `fields_and_fragments_from_selection'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:61:in `conflicts_within_selection_set'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:30:in `block in on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:52:in `setting_errors'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:30:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_are_defined_on_type.rb:25:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/unique_directives_per_location.rb:27:in `block (2 levels) in <module:UniqueDirectivesPerLocation>'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/base_visitor.rb:89:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:83:in `block in visit_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:80:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:80:in `visit_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:106:in `on_operation_definition_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:41:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/definition_dependencies.rb:47:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/subscription_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/query_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/mutation_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variable_usages_are_allowed.rb:13:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variables_are_used_and_defined.rb:44:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variable_names_are_unique.rb:20:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_have_appropriate_selections.rb:18:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:26:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/operation_names_are_valid.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/unique_directives_per_location.rb:27:in `block (2 levels) in <module:UniqueDirectivesPerLocation>'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/base_visitor.rb:59:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:61:in `public_send'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:61:in `block in on_document_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:59:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:59:in `on_document_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:41:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/definition_dependencies.rb:38:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variables_are_used_and_defined.rb:79:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragment_spreads_are_possible.rb:26:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragments_are_used.rb:6:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragments_are_finite.rb:6:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragment_names_are_unique.rb:17:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/operation_names_are_valid.rb:16:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/no_definitions_are_present.rb:34:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:16:in `public_send'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:16:in `visit'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:45:in `block (3 levels) in validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:44:in `catch'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:44:in `block (2 levels) in validate'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/timeout-0.4.1/lib/timeout.rb:170:in `timeout'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:43:in `block in validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:28:in `validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:30:in `validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query/validation_pipeline.rb:72:in `ensure_has_validated'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query/validation_pipeline.rb:33:in `valid?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query.rb:324:in `valid?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:27:in `block (2 levels) in analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:26:in `map'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:26:in `block in analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:32:in `analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:25:in `analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter.rb:46:in `block in run_all'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:40:in `execute_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter.rb:37:in `run_all'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:1312:in `multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:1288:in `execute'
-C:/sources/repo/ror/rails_graphql/app/controllers/graphql_controller.rb:17:in `execute'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/base.rb:224:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/rendering.rb:165:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/lib/turbo-rails.rb:24:in `with_request_id'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/lib/action_text/rendering.rb:23:in `with_renderer'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/callbacks.rb:258:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/rescue.rb:25:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `block in instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/instrumentation.rb:73:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activerecord-7.1.3.2/lib/active_record/railties/controller_runtime.rb:32:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/base.rb:160:in `process'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionview-7.1.3.2/lib/action_view/rendering.rb:40:in `process'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal.rb:227:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal.rb:309:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:32:in `serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:51:in `block in serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:124:in `each'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:124:in `find_routes'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:32:in `serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:882:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/tempfile_reaper.rb:20:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/etag.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/conditional_get.rb:43:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/head.rb:15:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/http/permissions_policy.rb:36:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/http/content_security_policy.rb:33:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-session-2.0.0/lib/rack/session/abstract/id.rb:272:in `context'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-session-2.0.0/lib/rack/session/abstract/id.rb:266:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/cookies.rb:689:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activerecord-7.1.3.2/lib/active_record/migration.rb:655:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:101:in `run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:132:in `call_app'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:28:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `catch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:37:in `call_app'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:24:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `block in tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:39:in `tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/broadcast_logger.rb:240:in `method_missing'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:24:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/request_id.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/method_override.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/runtime.rb:24:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:58:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/static.rb:25:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/sendfile.rb:114:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/engine.rb:536:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/configuration.rb:272:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/request.rb:100:in `block in handle_request'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:378:in `with_force_shutdown'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/request.rb:99:in `handle_request'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/server.rb:464:in `process_client'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/server.rb:245:in `block in run'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:155:in `block in spawn_thread'
-Completed 500 Internal Server Error in 210ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 4609)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
+Completed 200 OK in 75ms (Views: 0.1ms | ActiveRecord: 4.5ms | Allocations: 18819)
 
 
-Started POST "/graphql" for ::1 at 2024-04-01 12:46:49 +0900
+Started POST "/graphql" for ::1 at 2024-04-01 13:58:11 +0900
 Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}"}}
-Found two visible definitions for `Note.id`: #<Types::BaseField Note.id: ID!>, #<Types::BaseField Note.id: ID!>
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:36:in `block in visible_entry?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:31:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:31:in `visible_entry?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/member/has_fields.rb:142:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:598:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:161:in `block (2 levels) in get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:380:in `block in read_through'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:170:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:343:in `block in find_fields_and_fragments'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:340:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:340:in `find_fields_and_fragments'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:333:in `fields_and_fragments_from_selection'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:61:in `conflicts_within_selection_set'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:30:in `block in on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:52:in `setting_errors'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:30:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_are_defined_on_type.rb:25:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/unique_directives_per_location.rb:27:in `block (2 levels) in <module:UniqueDirectivesPerLocation>'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/base_visitor.rb:89:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:83:in `block in visit_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:80:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:80:in `visit_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:106:in `on_operation_definition_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:41:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/definition_dependencies.rb:47:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/subscription_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/query_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/mutation_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variable_usages_are_allowed.rb:13:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variables_are_used_and_defined.rb:44:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variable_names_are_unique.rb:20:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_have_appropriate_selections.rb:18:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:26:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/operation_names_are_valid.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/unique_directives_per_location.rb:27:in `block (2 levels) in <module:UniqueDirectivesPerLocation>'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/base_visitor.rb:59:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:61:in `public_send'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:61:in `block in on_document_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:59:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:59:in `on_document_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:41:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/definition_dependencies.rb:38:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variables_are_used_and_defined.rb:79:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragment_spreads_are_possible.rb:26:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragments_are_used.rb:6:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragments_are_finite.rb:6:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragment_names_are_unique.rb:17:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/operation_names_are_valid.rb:16:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/no_definitions_are_present.rb:34:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:16:in `public_send'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:16:in `visit'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:45:in `block (3 levels) in validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:44:in `catch'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:44:in `block (2 levels) in validate'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/timeout-0.4.1/lib/timeout.rb:170:in `timeout'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:43:in `block in validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:28:in `validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:30:in `validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query/validation_pipeline.rb:72:in `ensure_has_validated'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query/validation_pipeline.rb:33:in `valid?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query.rb:324:in `valid?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:27:in `block (2 levels) in analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:26:in `map'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:26:in `block in analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:32:in `analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:25:in `analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter.rb:46:in `block in run_all'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:40:in `execute_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter.rb:37:in `run_all'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:1312:in `multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:1288:in `execute'
-C:/sources/repo/ror/rails_graphql/app/controllers/graphql_controller.rb:17:in `execute'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/base.rb:224:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/rendering.rb:165:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/lib/turbo-rails.rb:24:in `with_request_id'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/lib/action_text/rendering.rb:23:in `with_renderer'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/callbacks.rb:258:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/rescue.rb:25:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `block in instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/instrumentation.rb:73:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activerecord-7.1.3.2/lib/active_record/railties/controller_runtime.rb:32:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/base.rb:160:in `process'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionview-7.1.3.2/lib/action_view/rendering.rb:40:in `process'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal.rb:227:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal.rb:309:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:32:in `serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:51:in `block in serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:124:in `each'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:124:in `find_routes'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:32:in `serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:882:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/tempfile_reaper.rb:20:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/etag.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/conditional_get.rb:43:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/head.rb:15:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/http/permissions_policy.rb:36:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/http/content_security_policy.rb:33:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-session-2.0.0/lib/rack/session/abstract/id.rb:272:in `context'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-session-2.0.0/lib/rack/session/abstract/id.rb:266:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/cookies.rb:689:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activerecord-7.1.3.2/lib/active_record/migration.rb:655:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:101:in `run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:132:in `call_app'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:28:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `catch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:37:in `call_app'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:24:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `block in tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:39:in `tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/broadcast_logger.rb:240:in `method_missing'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:24:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/request_id.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/method_override.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/runtime.rb:24:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:58:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/static.rb:25:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/sendfile.rb:114:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/engine.rb:536:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/configuration.rb:272:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/request.rb:100:in `block in handle_request'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:378:in `with_force_shutdown'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/request.rb:99:in `handle_request'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/server.rb:464:in `process_client'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/server.rb:245:in `block in run'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:155:in `block in spawn_thread'
-Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4285)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 12:47:28 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}"}}
-Found two visible definitions for `Note.id`: #<Types::BaseField Note.id: ID!>, #<Types::BaseField Note.id: ID!>
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:36:in `block in visible_entry?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:31:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:31:in `visible_entry?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/member/has_fields.rb:142:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:598:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:161:in `block (2 levels) in get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:380:in `block in read_through'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/warden.rb:170:in `get_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:343:in `block in find_fields_and_fragments'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:340:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:340:in `find_fields_and_fragments'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:333:in `fields_and_fragments_from_selection'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:61:in `conflicts_within_selection_set'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:30:in `block in on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:52:in `setting_errors'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:30:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_are_defined_on_type.rb:25:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/unique_directives_per_location.rb:27:in `block (2 levels) in <module:UniqueDirectivesPerLocation>'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/base_visitor.rb:89:in `on_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:83:in `block in visit_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:80:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:80:in `visit_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:106:in `on_operation_definition_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:41:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/definition_dependencies.rb:47:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/subscription_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/query_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/mutation_root_exists.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variable_usages_are_allowed.rb:13:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variables_are_used_and_defined.rb:44:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variable_names_are_unique.rb:20:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_have_appropriate_selections.rb:18:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fields_will_merge.rb:26:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/operation_names_are_valid.rb:12:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/unique_directives_per_location.rb:27:in `block (2 levels) in <module:UniqueDirectivesPerLocation>'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/base_visitor.rb:59:in `on_operation_definition'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:61:in `public_send'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:61:in `block in on_document_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:59:in `each'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:59:in `on_document_children'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:41:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/definition_dependencies.rb:38:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/variables_are_used_and_defined.rb:79:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragment_spreads_are_possible.rb:26:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragments_are_used.rb:6:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragments_are_finite.rb:6:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/fragment_names_are_unique.rb:17:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/operation_names_are_valid.rb:16:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/rules/no_definitions_are_present.rb:34:in `on_document'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:16:in `public_send'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/language/static_visitor.rb:16:in `visit'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:45:in `block (3 levels) in validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:44:in `catch'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:44:in `block (2 levels) in validate'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/timeout-0.4.1/lib/timeout.rb:170:in `timeout'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:43:in `block in validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:28:in `validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/static_validation/validator.rb:30:in `validate'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query/validation_pipeline.rb:72:in `ensure_has_validated'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query/validation_pipeline.rb:33:in `valid?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query.rb:324:in `valid?'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:27:in `block (2 levels) in analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:26:in `map'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:26:in `block in analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:32:in `analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/analysis/ast.rb:25:in `analyze_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter.rb:46:in `block in run_all'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:40:in `execute_multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter.rb:37:in `run_all'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:1312:in `multiplex'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema.rb:1288:in `execute'
-C:/sources/repo/ror/rails_graphql/app/controllers/graphql_controller.rb:17:in `execute'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/base.rb:224:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/rendering.rb:165:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/callbacks.rb:259:in `block in process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/lib/turbo-rails.rb:24:in `with_request_id'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/lib/action_text/rendering.rb:23:in `with_renderer'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `instance_exec'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:141:in `run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/callbacks.rb:258:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/rescue.rb:25:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `block in instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/notifications.rb:206:in `instrument'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/instrumentation.rb:73:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activerecord-7.1.3.2/lib/active_record/railties/controller_runtime.rb:32:in `process_action'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/abstract_controller/base.rb:160:in `process'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionview-7.1.3.2/lib/action_view/rendering.rb:40:in `process'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal.rb:227:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_controller/metal.rb:309:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:32:in `serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:51:in `block in serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:124:in `each'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:124:in `find_routes'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/journey/router.rb:32:in `serve'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/routing/route_set.rb:882:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/tempfile_reaper.rb:20:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/etag.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/conditional_get.rb:43:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/head.rb:15:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/http/permissions_policy.rb:36:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/http/content_security_policy.rb:33:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-session-2.0.0/lib/rack/session/abstract/id.rb:272:in `context'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-session-2.0.0/lib/rack/session/abstract/id.rb:266:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/cookies.rb:689:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activerecord-7.1.3.2/lib/active_record/migration.rb:655:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/callbacks.rb:101:in `run_callbacks'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:132:in `call_app'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:28:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `catch'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:37:in `call_app'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:24:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `block in tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:39:in `tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/tagged_logging.rb:135:in `tagged'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/broadcast_logger.rb:240:in `method_missing'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/rack/logger.rb:24:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/request_id.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/method_override.rb:28:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/runtime.rb:24:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/activesupport-7.1.3.2/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/server_timing.rb:58:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/static.rb:25:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/rack-3.0.10/lib/rack/sendfile.rb:114:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/actionpack-7.1.3.2/lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/engine.rb:536:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/configuration.rb:272:in `call'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/request.rb:100:in `block in handle_request'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:378:in `with_force_shutdown'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/request.rb:99:in `handle_request'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/server.rb:464:in `process_client'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/server.rb:245:in `block in run'
-C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:155:in `block in spawn_thread'
-Completed 500 Internal Server Error in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1526)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 13:07:52 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}"}}
-  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
-Completed 200 OK in 175ms (Views: 0.2ms | ActiveRecord: 6.7ms | Allocations: 21491)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 13:15:25 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}"}}
-              Failed to implement Note.id, tried:
-
-              - `Types::NoteType#id`, which did not exist
-              - `Note::ActiveRecord_Relation#id`, which did not exist
-              - Looking up hash key `:id` or `"id"` on `#<Note::ActiveRecord_Relation:0x00000264fd1a8f38>`, but it wasn't a Hash
-
-              To implement this field, define one of the methods above (and check for typos), or supply a `fallback_value`.
-
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/field.rb:710:in `block (2 levels) in resolve'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/field.rb:817:in `with_extensions'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/field.rb:654:in `block in resolve'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:779:in `minimal_after_lazy'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/query.rb:372:in `after_lazy'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/schema/field.rb:652:in `resolve'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:367:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/tracing/trace.rb:52:in `execute_field'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:366:in `block in evaluate_selection_with_resolved_keyword_args'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:718:in `call_method_on_directives'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:354:in `evaluate_selection_with_resolved_keyword_args'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:264:in `evaluate_selection'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/execution/interpreter/runtime.rb:214:in `block (2 levels) in evaluate_selections'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/dataloader.rb:252:in `block in spawn_job_fiber'
-C:/Users/hoang/.local/share/gem/ruby/3.2.0/gems/graphql-2.3.0/lib/graphql/dataloader.rb:233:in `block in spawn_fiber'
-Completed 500 Internal Server Error in 38ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4433)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 13:15:45 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNotes {\n    id\n    title\n    body\n  }\n}"}}
-  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC[0m
-Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 7647)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 13:17:43 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query{\n  fetchNote(id:1)\n  [\n  id\n  title\n  body\n]\n}", "graphql"=>{"query"=>"query{\n  fetchNote(id:1)\n  [\n  id\n  title\n  body\n]\n}"}}
-Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3925)
-
-
-Started POST "/graphql" for ::1 at 2024-04-01 13:17:59 +0900
-Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query{\n  fetchNote(id:1)\n  {\n  id\n  title\n  body}\n}", "graphql"=>{"query"=>"query{\n  fetchNote(id:1)\n  {\n  id\n  title\n  body}\n}"}}
+  Parameters: {"query"=>"query {\n  fetchNote(id: 1) {\n    id\n    title\n    body\n  }\n}", "graphql"=>{"query"=>"query {\n  fetchNote(id: 1) {\n    id\n    title\n    body\n  }\n}"}}
   [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/graphql/queries/fetch_note.rb:7:in `resolve'
-Completed 200 OK in 37ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 6537)
+Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 9654)
 
 
-Started POST "/graphql" for ::1 at 2024-04-01 13:18:04 +0900
+Started POST "/graphql" for ::1 at 2024-04-01 13:59:54 +0900
 Processing by GraphqlController#execute as */*
-  Parameters: {"query"=>"query{\n  fetchNote(id:10)\n  {\n  id\n  title\n  body}\n}", "graphql"=>{"query"=>"query{\n  fetchNote(id:10)\n  {\n  id\n  title\n  body}\n}"}}
-  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
-  ↳ app/graphql/queries/fetch_note.rb:7:in `resolve'
-Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1333)
+  Parameters: {"query"=>"query {\n  test_field\n}", "graphql"=>{"query"=>"query {\n  test_field\n}"}}
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1050)
+
+
+Started POST "/graphql" for ::1 at 2024-04-01 14:00:04 +0900
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  testField\n}", "graphql"=>{"query"=>"query {\n  testField\n}"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 650)
 
 
