@@ -9,8 +9,9 @@ module Mutations
 
       begin
         note = Note.create!(note_params)
-
-        { note: note }
+        {
+          note: note
+        }
       rescue ActiveRecord::RecordInvalid => e
         GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
           " #{e.record.errors.full_messages.join(', ')}")
